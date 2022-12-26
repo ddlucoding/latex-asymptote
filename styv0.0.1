@@ -1,0 +1,166 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% dlu.sty v0.0.1 %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%
+%% Copyright (c) Daniel Lu
+%% Made in 2022
+%%
+%% Disclaimer: This is my absolute first sty package that I have developed for note-taking usages in my high school career. 
+
+%% Inspired by the notes of Evan Chen, Aathreya Kadambi, and many others. 
+%% Import packages and overall structure used from Aathreya's NotesTemplate.sty file. 
+\ProvidesPackage{dlu}
+
+%% These are some packages that should be useful in this sty file. Just a bunch of import statements, I suppose...
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{ulem}
+\RequirePackage{url}
+\RequirePackage{tikz}
+\RequirePackage{hyperref}
+\RequirePackage{wrapfig}
+\RequirePackage{indentfirst}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\RequirePackage{ragged2e}
+\RequirePackage{mathtools}
+\RequirePackage{enumitem}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[inline]{asymptote}
+\RequirePackage[a4paper, margin=1in]{geometry}
+
+\RequirePackage{tcolorbox}
+\tcbuselibrary{skins}
+%% For reference, the "tcolorbox" package includes all of the typesetting we need to make colorful boxes! 
+%% Source: https://ctan.org/pkg/tcolorbox?lang=en
+%% Documentation: https://mirror.math.princeton.edu/pub/CTAN/macros/latex/contrib/tcolorbox/tcolorbox.pdf
+%
+% Website I used for color-picking: https://www.w3schools.com/colors/colors_converter.asp
+
+
+%% Here are some command shortcuts for defining sets of numbers
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+%% Some math shortcuts.
+\newcommand{\binomialTheorem}[3]{(#1+#2)^#3}
+
+%% COLORFUL BOXES ENVIRONMENTS
+% Complete List of Box Environments (more to be added later?):
+%   -Concept
+%   -Theorem (can be used for propositions and corollaries)
+%   -Strategy
+%   -Definition
+%   -Example
+%   -Proof
+%   -Exercise(s)
+%   -Problem(s)
+%
+%% Some color definitions.
+\definecolor{BorderRed}{HTML}{FF1A1A}
+\definecolor{LightRed}{HTML}{FFE6E6}
+\definecolor{BorderOrange}{HTML}{FF6600}
+\definecolor{LightOrange}{HTML}{FFDDCC}
+\definecolor{BorderGreen}{HTML}{00E600}
+\definecolor{LightGreen}{HTML}{B3FFB3}
+\definecolor{BorderPink}{HTML}{FF66FF}
+\definecolor{LightPink}{HTML}{FFE6FF}
+\definecolor{LightPurple}{HTML}{F1E6FF}
+\definecolor{BorderPurple}{HTML}{8C1AFF}
+\definecolor{BorderBlue}{HTML}{00ACE6}
+\definecolor{LightBlue}{HTML}{CCF2FF}
+\definecolor{BorderDarkBlue}{HTML}{0CD6F5}
+\definecolor{DarkLightBlue}{HTML}{CAF4FA}
+\definecolor{BorderUnderTheSea}{HTML}{00E6B8}
+\definecolor{LightUnderTheSea}{HTML}{B3FFF0}
+\definecolor{WarningBorder}{HTML}{B30000}
+\definecolor{WarningInterior}{HTML}{FFB3B3}
+\definecolor{YellowInterior}{HTML}{EFF5C6}
+\definecolor{YellowBorder}{HTML}{D3F00C}
+
+\newtcolorbox{Concept}{
+    colframe = BorderRed,
+    colback = LightRed
+}
+
+\newtcolorbox{Theorem}{
+    colframe = BorderOrange,
+    colback = LightOrange
+}
+
+\newtcolorbox{Strategy}{
+    enhanced,
+    frame hidden,
+    borderline west = {1.6pt}{1pt}{BorderGreen},
+    colback = LightGreen
+}
+
+\newtcolorbox{Definition}{
+    % This type of box maybe a bit more bland than it should be
+    enhanced,
+    frame hidden,
+    borderline west = {2pt}{1pt}{gray},
+    colback = gray!10!white
+}
+
+\newtcolorbox{Example}{
+    enhanced,
+    frame hidden,
+    borderline north = {1.8pt}{1pt}{BorderPink},
+    borderline south = {1.8pt}{1pt}{BorderPink},
+    colback = LightPink,
+}
+
+\newtcolorbox{Proof}{
+    enhanced,
+    frame hidden,
+    borderline north = {2pt}{1pt}{BorderPurple},
+    colback = LightPurple
+}
+
+\newtcolorbox{Exercise}{
+    enhanced,
+    frame hidden,
+    borderline north = {1.8pt}{1pt}{BorderBlue},
+    borderline south = {1.8pt}{1pt}{BorderBlue},
+    colback = LightBlue,
+}
+
+\newtcolorbox{Problem}{
+    enhanced,
+    frame hidden,
+    borderline north = {1.8pt}{1pt}{BorderDarkBlue},
+    borderline south = {1.8pt}{1pt}{BorderDarkBlue},
+    colback = DarkLightBlue,
+}
+
+\newtcolorbox{Solution}{
+    enhanced,
+    frame hidden,
+    borderline north = {1.8pt}{1pt}{BorderUnderTheSea},
+    colback = LightUnderTheSea
+}
+
+\newtcolorbox{Note}{
+    enhanced,
+    frame hidden,
+    borderline west  = {1.8pt}{1pt}{YellowBorder},
+    colback = YellowInterior
+}
+
+\newtcolorbox{Warning}{
+    enhanced,
+    frame hidden,
+    borderline west = {1.8pt}{1pt}{WarningBorder},
+    colback = WarningInterior
+}
+
+\endinput
+%
+%
+% End of dlu.sty
